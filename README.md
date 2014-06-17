@@ -7,6 +7,7 @@ nplay - simple text mode .wav file player.
 
 nrecord - simple text mode .wav file recorder, with level and clip monitor.
 
+IMPORTANT NOTE: These were written and tested on 32 bit Intel architecture machines (i386, i686) - they do not appear to work due to the struct packing on other architectures, i.e. 32 bit ARM (R-Pi) or 64 bit x86_64
 
 wavnorm, nplay, nrecord
 
