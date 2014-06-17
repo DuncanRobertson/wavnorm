@@ -2,9 +2,10 @@ wavnorm
 =======
 
 wavnorm - automatically maximizes the level of a .wav file, destructively, without using a temp file.
-nplay - simple text mode .wav file player.
-nrecord - simple text mode .wav file recorder, with level and clip monitor.
 
+nplay - simple text mode .wav file player.
+
+nrecord - simple text mode .wav file recorder, with level and clip monitor.
 
 
 wavnorm, nplay, nrecord
@@ -109,4 +110,7 @@ http://www.zog.net.au/
 
 addendum, June 2014:
 I've checked these into github "as is" to make the code available. Right now I havent checked that it builds or functions on a modern distro, but there is no reason it shouldn't.
+
+Building on a Ubuntu/Debian system - these will need the libnewt-dev package installed, i.e.
+sudo apt-get install libnewt-dev
 

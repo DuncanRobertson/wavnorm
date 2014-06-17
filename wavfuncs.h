@@ -6,7 +6,7 @@ some common functions we do on wav files in this prog...
 
 */
 
-#define VERSION "0.4"
+#define VERSION "0.5"
 
 
 /** data structure that holds the wav head info in a form we can use **/
