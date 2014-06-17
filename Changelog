@@ -1,0 +1,35 @@
+
+http://www.linuxbandwagon.com/wavnorm/
+
+Changelog:
+
+0.1 - created from frags of code from my aborted sound editor.
+
+0.2 - changed name to wavnorm, added -r option, cleaned up code,
+      added GPL and README
+
+0.3 - Cleaned up error checking, now handles more than one wav file on
+      the command line, made the output of the program saner.
+
+0.4 - Wrote nrecord and nplay, modularised the code further, added the
+      fix wav length function, etc. Put this in a seperate file and
+      put everything under CVS.
+
+0.5 - Added updates and manpages from Jorgen Grahn <jgrahn@algonet.se>
+    - Lost CVS tree due to various software changes I won't go into, so
+      took out the CVS stuff for now.
+    - Added improvements to wavnorm from Frederik Arbeiter 
+      <frederik.arbeiter@gmx.net>, see
+      http://www.uni-karlsruhe.de/~ualy/software/wavlevel/wavlevel.html
+      for wavlevel, his handy package!
+    - Also added suggestions by Chad Hurwitz <churritz@king.cts.com>,
+      regarding allowing some clipping to occur in a controlled manner.
+      Part of this also includes a simple display of where the peaks
+      occur in the file, handy for choosing compression or choosing
+      how many clips to include. Still unsure of the usefulness of this
+      code however. 
+    - Added scaling function as in the patch sent in by Attila Bogar,
+      <boat@elte.hu>
+    - Added a little % progress thingy which is better than how it was
+      before.
+      

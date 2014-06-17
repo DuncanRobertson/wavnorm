@@ -1,0 +1,36 @@
+.\" $Id$
+.\" 
+.\"
+.TH nplay 1 "JULY 2000" Unix "User Manuals"
+.SH NAME
+
+nplay \- play a wav file, while monitoring the levels
+
+.SH SYNOPSIS
+
+.B nplay [-i interval]
+.I file
+.B ...
+
+.SH DESCRIPTION
+
+This is a very simple .wav player. It uses a newt/ncurses interface and will
+play all the .wav files specified on the command line. It has a simple bar
+graph to indicate how far through the file it is, plus 2 VU meter graphs one
+to indicate the current max level in the current interval, the other to
+indicate the total peak level hit so far.
+
+.SH OPTIONS
+
+.IP -i
+screen update interval, in seconds.
+Default is 0.1 (10 times per second).
+
+.SH AUTHOR
+
+<duncan@zog.net.au>
+
+.SH "SEE ALSO"
+
+.BR nrecord (1),
+.BR wavnorm (1)

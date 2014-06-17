@@ -1,0 +1,40 @@
+.\" $Id$
+.\" 
+.\"
+.TH nrecord 1 "JULY 2000" Unix "User Manuals"
+.SH NAME
+
+nrecord \- record a wav file, while monitoring the levels
+
+.SH SYNOPSIS
+
+.B nrecord [-d device]
+.I file
+
+.SH DESCRIPTION
+
+nrecord records 16 bit stereo audio at 44100 Hz from the /dev/dsp device (or
+another device if specified by the -d option) and saves it as a .wav file,
+until ENTER is pressed. It uses a newt/ncurses interface to give a count of
+elapsed time in seconds, and 2 VU meters, one indicating the current level,
+and one indicated the highest level attained so far. If the level has hit
+maximum, the word CLIPPED is displayed on the screen. The advantage of this
+program is it's simplicity, as it allows simple stereo wav recording with
+level monitoring without fiddling around with resource hungry multitrack
+software. Run aumix or a similar mixer program in another xterm or console,
+adjust the levels so there is enough headroom that clipping wont occur, and
+record.
+
+.SH OPTIONS
+
+.IP -d
+device to record from (default: /dev/dsp)
+
+.SH AUTHOR
+
+<duncan@zog.net.au>
+
+.SH "SEE ALSO"
+
+.BR nplay (1),
+.BR wavnorm (1)

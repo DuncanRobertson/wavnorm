@@ -1,0 +1,87 @@
+.\" $Id$
+.\" 
+.\"
+.TH wavnorm 1 "JULY 2000" Unix "User Manuals"
+.SH NAME
+
+wavnorm \- automatically maximize the level of a .wav file
+
+.SH SYNOPSIS
+
+.B wavnorm [-v] [-d] [-t threshold] [-r ratio] [-h] [-s scale] [-o overs]
+.I file
+.B ...
+
+.SH DESCRIPTION
+
+This is a simple command line, destructive "normalizer" for 16 bit, stereo
+wav files. By destructive I mean it works on the ORIGINAL file specified on
+the command line, it does NOT make a copy. If you want more flexible
+options, the
+.I sox(1)
+or
+.I ecasound(1)
+packages can do all this and more, but with a bit more
+fiddling with command line options.
+
+What it actually does is find the highest level in a .wav file, and then
+scale the entire .wav file so that the loudest point is as loud as possible
+without clipping. It does this "in place" on the original .wav file, so
+space consuming temp files aren't created. This is handy when creating demo
+compilation CDs of home recorded material from different sources, which can
+vary widely in levels. wavnorm can impose SOME degree of consistency.
+
+If wavnorm finds the length of the file as indicated by the .wav header is
+not what it should be, it will update the length as well.
+
+.SH OPTIONS
+
+.IP -v
+verbose
+
+.IP -d
+(destructive) actually perform the up-scaling of the sample, if this is not
+specified the file is not changed.
+
+.IP -t
+specifies a threshold under which it won't make
+a change. For example, if the calculated ratio is 1.03 scaling up the .wav
+won't make it that much louder, but probably will alter the sound a tiny bit,
+so we may as well skip scaling up the level.
+
+.IP -r
+ratio of max possible to scale
+
+.IP -s
+force scale. ignore looking for a maximum value to scale to and force scaling
+to this value. Clipping could occur if the wrong value is chosen.
+
+.IP -o
+overs to allow. Specify the number of points in the file that are allowed to
+be clipped over maximum. This is an experimental feature and can wreck the
+sound quality of the file, use with care.
+
+.IP -h
+histogram. Print the table of values used in calculating the scale factor
+used in -o. This gives handy info on what percentage of values hit what 
+peak values.
+
+.SH NOTES
+
+I make no claims about the audio quality - it sounds fine to me, if that is
+your concern hire a mastering house to do it properly.
+
+This program purely scales the audio. For dynamics controls use a compressor,
+such as that found in the ecasounds program.
+
+
+.SH AUTHOR
+
+<duncan@zog.net.au>
+
+.SH "SEE ALSO"
+
+.BR nplay (1),
+.BR nrecord (1),
+.BR sox (1),
+.BR ecasound(1)
