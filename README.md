@@ -15,6 +15,8 @@ where I couldn't find similar tools that would do the job. All programs are
 presently limited to 16bit stereo wav files at 44100 Hz, as they are
 intended for preparing music for making demo CDs and/or mp3 files.
 
+nplay and nrecord presume OSS sound drivers, or an emulation (i.e. /dev/dspX audio devices).
+
 THESE PROGRAMS HAVE NO WARRANTY! They work fine for me but if they don't for
 you you are welcome to read the code and send me a patch! 
 
